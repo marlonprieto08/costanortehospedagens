@@ -31,7 +31,7 @@ async function carregarKitnet() {
         id = 0;
     }
 
-    const response = await fetch("data/kitnets.json");
+    const response = await fetch("./data/kitnets.json");
     const data = await response.json();
 
     const kitnet = data[id];
