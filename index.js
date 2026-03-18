@@ -70,7 +70,7 @@ async function carregarKitnet() {
 
         const img = document.createElement("img");
 
-        img.src = `/img/${pasta}/${i}.webp`;
+        img.src = `./img/${pasta}/${i}.webp`;
         img.loading = "lazy";
 
         img.onerror = () => {
@@ -86,7 +86,7 @@ async function carregarKitnet() {
 
         const img = document.createElement("img");
 
-        img.src = `/img/exterior/${i}.webp`;
+        img.src = `./img/exterior/${i}.webp`;
         img.loading = "lazy";
 
         console.log(img);
