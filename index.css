@@ -282,6 +282,17 @@ h2 {
     transform: translateZ(0);
 }
 
+#instagram,
+#contato {
+    display: flex;
+    flex-direction: column;
+}
+
+#instagram div,
+#contato div {
+    display: flex;
+}
+
 .reviews {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -675,24 +686,51 @@ footer {
     background: #c16854;
 }
 
-/* .instagram-feed {
+#instagram .instagram-feed {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
-    margin-top: 25px;
+    margin-top: 30px;
+    padding-bottom: 22px;
 }
 
-.instagram-feed img {
+.instagram-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.instagram-item img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 10px;
+    transition: transform .4s ease;
+}
+
+.instagram-item:hover img {
+    transform: scale(1.1);
+}
+
+.instagram-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+
+    opacity: 0;
     transition: .3s;
 }
 
-.instagram-feed img:hover {
-    transform: scale(1.05);
-} */
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
 
 @media(max-width:900px) {
 

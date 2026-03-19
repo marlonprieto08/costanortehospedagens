@@ -403,3 +403,32 @@ const observer = new MutationObserver(() => {
 });
 
 observer.observe(navTop, { attributes: true });
+
+async function carregarInstagram() {
+
+    const response = await fetch("/data/instagram.json");
+    const posts = await response.json();
+
+    const container = document.getElementById("instagram-feed");
+
+    posts.slice(0, 8).forEach(post => {
+
+        const div = document.createElement("div");
+        div.className = "instagram-item";
+
+        div.innerHTML = `
+        <img src="${post.img}" loading="lazy">
+        <div class="instagram-overlay">${post.caption}</div>
+    `;
+
+        div.addEventListener("click", () => {
+            window.open(post.link, "_blank");
+        });
+
+        container.appendChild(div);
+
+    });
+
+}
+
+carregarInstagram();
