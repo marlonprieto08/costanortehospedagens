@@ -22,6 +22,38 @@ async function carregarReviews() {
 
 carregarReviews();
 
+// REVIEWS AIRBNB
+async function carregarReviewsAirbnb() {
+
+    const response = await fetch("api/airbnb-reviews.json");
+    const data = await response.json();
+
+    const ratingDiv = document.getElementById("airbnb-rating");
+    const list = document.getElementById("airbnb-reviews-list");
+
+    ratingDiv.innerHTML = `
+⭐ ${data.rating} (${data.total} avaliações)
+`;
+
+    data.reviews.slice(0, 6).forEach(r => {
+
+        const card = document.createElement("div");
+        card.className = "review-card";
+
+        card.innerHTML = `
+<div class="review-author">${r.author}</div>
+<div class="review-stars">★★★★★</div>
+<div class="review-text">${r.text}</div>
+`;
+
+        list.appendChild(card);
+
+    });
+
+}
+
+carregarReviewsAirbnb();
+
 async function carregarKitnet() {
 
     const params = new URLSearchParams(window.location.search);
@@ -304,38 +336,6 @@ overlay.addEventListener('click', () => {
     nav.classList.remove('active');
     overlay.classList.remove('active');
 });
-
-// REVIEWS AIRBNB
-async function carregarReviewsAirbnb() {
-
-    const response = await fetch("/");
-    const data = await response.json();
-
-    const ratingDiv = document.getElementById("airbnb-rating");
-    const list = document.getElementById("airbnb-reviews-list");
-
-    ratingDiv.innerHTML = `
-⭐ ${data.rating} (${data.total} avaliações)
-`;
-
-    data.reviews.slice(0, 6).forEach(r => {
-
-        const card = document.createElement("div");
-        card.className = "review-card";
-
-        card.innerHTML = `
-<div class="review-author">${r.author}</div>
-<div class="review-stars">★★★★★</div>
-<div class="review-text">${r.text}</div>
-`;
-
-        list.appendChild(card);
-
-    });
-
-}
-
-carregarReviewsAirbnb();
 
 let galleryImages;
 

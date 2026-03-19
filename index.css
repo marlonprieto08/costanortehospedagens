@@ -283,13 +283,15 @@ h2 {
 }
 
 #instagram,
-#contato {
+#contato,
+#avaliacoes {
     display: flex;
     flex-direction: column;
 }
 
 #instagram div,
-#contato div {
+#contato div,
+#avaliacoes>div:last-child {
     display: flex;
 }
 
@@ -297,6 +299,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
+    padding-bottom: 20px;
 }
 
 .review {
@@ -589,9 +592,9 @@ footer {
 
 
 .airbnb-reviews {
-    max-width: 1100px;
+    /* max-width: 1100px; */
     margin: auto;
-    padding: 60px 20px;
+    /* padding: 60px 20px; */
 }
 
 #airbnb-rating {
@@ -603,9 +606,13 @@ footer {
 .review-card {
     background: white;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 14px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+}
+
+.review-card:hover {
+    transform: translateY(-2px);
 }
 
 .review-author {
