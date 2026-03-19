@@ -1,18 +1,26 @@
 {
- "rating": 4.92,
- "total": 37,
+ "rating": 4.67,
+ "total": 15,
  "reviews":[
   {
-   "author":"Carlos",
-   "text":"Localização excelente e kitnet muito limpa."
+   "author":"Tiago",
+   "text":"Muito bom o lugar, até melhor do que nas fotos, privacidade total."
   },
   {
-   "author":"Marina",
-   "text":"Muito perto da praia, ótima estadia."
+   "author":"Ana",
+   "text":"achei a kitnet muito aconchegante,era exatamente igual o anúncio."
   },
   {
-   "author":"Lucas",
-   "text":"Voltarei com certeza."
+   "author":"Marisa",
+   "text":"A anfitriã respondeu tudo prontamente e tirou todas as minhas dúvidas com toda educação. O local da kitnet é seguro e fácil acesso. A kitnet é limpa, organizada, a cozinha é funcional equipada com utensílios e equipamentos que atenderam as necessidades durante a minha estadia. Roupas de cama e toalhas l disponíveis limpas e organizadas. A localização é excelente poucos metros da praia Martim de Sá onde temos diversos restaurantes, mercadinhos, quiosques e padaria. Enfim, eu só tenho a agradecer e  uma dica para completar a perfeição seria ter uma TV no local, mas de qq forma foi perfeito. Obrigada."
+  },
+  {
+   "author":"Vivian",
+   "text":"Ótima estadia, tudo organizado e limpo, exatamente como nas fotos. Recomendo!"
+  },
+  {
+   "author":"Brenda",
+   "text":"Suite muito boa, tem tudo que precisamos, bem limpo e confortável. Os anfitriões são atenciosos e rápidos nas mensagens, deixaram mimos e eu me senti bem acolhida. Estava muito calor e fiquei preocupada pois ventilador é pequeno, mas deu conta durante a noite. Recomendo."
   }
  ]
 }
