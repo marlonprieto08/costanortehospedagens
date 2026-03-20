@@ -1,26 +1,26 @@
-async function carregarReviews() {
+// async function carregarReviews() {
 
-    const reviews = [
-        { name: "Carlos", rating: 5, text: "Excelente localização e hospedagem muito limpa." },
-        { name: "Marina", rating: 5, text: "Muito perto da praia e ambiente confortável." },
-        { name: "Rafael", rating: 5, text: "Ótimo custo benefício, recomendo." }
-    ];
+//     const reviews = [
+//         { name: "Carlos", rating: 5, text: "Excelente localização e hospedagem muito limpa." },
+//         { name: "Marina", rating: 5, text: "Muito perto da praia e ambiente confortável." },
+//         { name: "Rafael", rating: 5, text: "Ótimo custo benefício, recomendo." }
+//     ];
 
-    const container = document.getElementById('google-reviews');
+//     const container = document.getElementById('google-reviews');
 
-    reviews.forEach(r => {
+//     reviews.forEach(r => {
 
-        const div = document.createElement('div');
-        div.className = 'review';
+//         const div = document.createElement('div');
+//         div.className = 'review';
 
-        div.innerHTML = `⭐⭐⭐⭐⭐<br><strong>${r.name}</strong><br>${r.text}`;
+//         div.innerHTML = `⭐⭐⭐⭐⭐<br><strong>${r.name}</strong><br>${r.text}`;
 
-        container.appendChild(div);
+//         container.appendChild(div);
 
-    });
-}
+//     });
+// }
 
-carregarReviews();
+// carregarReviews();
 
 // REVIEWS AIRBNB
 async function carregarReviewsAirbnb() {
@@ -35,19 +35,17 @@ async function carregarReviewsAirbnb() {
 ⭐ ${data.rating} (${data.total} avaliações)
 `;
 
-    data.reviews.slice(0, 6).forEach(r => {
-
+    [...data.reviews].reverse().slice(0, 6).forEach(r => {
         const card = document.createElement("div");
         card.className = "review-card";
 
         card.innerHTML = `
-<div class="review-author">${r.author}</div>
-<div class="review-stars">★★★★★</div>
-<div class="review-text">${r.text}</div>
-`;
+            <div class="review-author">${r.author}</div>
+            <div class="review-stars">${r.stars}</div>
+            <div class="review-text">${r.text}</div>
+            `;
 
         list.appendChild(card);
-
     });
 
 }
@@ -86,9 +84,12 @@ async function carregarKitnet() {
 
         kitnet.itens.forEach(item => {
 
-            const li = document.createElement("li");
-            li.innerText = item;
-            lista.appendChild(li);
+            const div = document.createElement("div");
+            const span = document.createElement("span");
+            div.className = "feature";
+            span.innerText = item;
+            div.appendChild(span);
+            lista.appendChild(div);
 
         })
     }

@@ -211,6 +211,8 @@ h2 {
 
 .feature {
     display: flex;
+    justify-content: center;
+    align-items: center;
     background: white;
     padding: 30px;
     border-radius: 14px;
@@ -297,7 +299,7 @@ h2 {
 
 .reviews {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(233px, 1fr));
     gap: 25px;
     padding-bottom: 20px;
 }
@@ -738,6 +740,24 @@ footer {
 .instagram-item:hover .instagram-overlay {
     opacity: 1;
 }
+
+@media(max-width:1680px) {
+    .reviews {
+        grid-template-columns: repeat(auto-fit, minmax(318px, 1fr));
+    }
+}
+
+/* @media(max-width:1580px) {
+    .reviews {
+        grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
+    }
+} */
+
+/* @media(max-width:1390px) {
+    .reviews {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+} */
 
 @media(max-width:900px) {
 
