@@ -49,6 +49,10 @@ img {
     height: auto;
 }
 
+p {
+    text-align: justify;
+}
+
 /* .logo {
             font-family: Poppins;
             font-weight: 700;
@@ -821,7 +825,7 @@ footer {
 
 @media(max-width:700px) {
     .hero h1 {
-        font-size: 36px
+        font-size: 35px
     }
 
     .hero p {
