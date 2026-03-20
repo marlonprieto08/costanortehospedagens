@@ -25,7 +25,7 @@
 // REVIEWS AIRBNB
 async function carregarReviewsAirbnb() {
 
-    const response = await fetch("api/airbnb-reviews.json");
+    const response = await fetch("data/airbnb-reviews.json");
     const data = await response.json();
 
     const ratingDiv = document.getElementById("airbnb-rating");
