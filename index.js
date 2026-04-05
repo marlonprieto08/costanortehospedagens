@@ -460,16 +460,19 @@ let scrollListenerActive = false;
 function scrollMobile() {
     const screenCenter = window.innerHeight / 2;
 
-    const elements = document.querySelectorAll('.feature, .card, .btn');
-
+    const elements = document.querySelectorAll('.feature, .card, .btn, .gallery img, .instagram-item');
+    console.log(elements);
     elements.forEach(el => {
         const rect = el.getBoundingClientRect();
         const elCenter = rect.top + rect.height / 2;
-
+        let distance_max = 120;
         const distance = Math.abs(screenCenter - elCenter);
 
-        // área maior = funciona melhor no mobile
-        if (distance < 60) {
+        if (el.className == 'feature') {
+            distance_max = 60;
+        }
+
+        if (distance < distance_max) {
             el.classList.add('active');
         } else {
             el.classList.remove('active');
