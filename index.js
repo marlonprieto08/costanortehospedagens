@@ -70,14 +70,13 @@ async function carregarKitnet() {
     if (document.getElementById("descricao"))
         document.getElementById("descricao").innerText = kitnet.descricao;
     if (document.getElementById("reserva"))
-        document.getElementById("reserva").href = kitnet.reserva;
-    if (document.getElementById("btn_hero"))
-        document.getElementById("btn_hero").href = kitnet.reserva;
+        document.getElementById("reserva").href = (kitnet.reserva != "") ? kitnet.reserva : document.getElementById("reserva").href;
+    // if (document.getElementById("btn_hero"))
+    //     document.getElementById("btn_hero").href = kitnet.reserva;
     if (document.getElementById("btn-airbnb"))
         document.getElementById("btn-airbnb").href = kitnet.reserva;
     if (document.getElementById("reviews"))
         document.getElementById("reviews").href = kitnet.reviews;
-
     if (document.getElementById("itens")) {
         // itens   
         const lista = document.getElementById("itens");
@@ -433,3 +432,70 @@ async function carregarInstagram() {
 }
 
 carregarInstagram();
+
+const btnReserva = document.getElementById("reserva");
+const modal = document.getElementById("modal-reservas");
+const fechar = document.querySelector(".modal-close");
+
+// abrir modal
+btnReserva.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.add("active");
+});
+
+// fechar no X
+fechar.addEventListener("click", () => {
+    modal.classList.remove("active");
+});
+
+// fechar clicando fora
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
+});
+
+let scrollListenerActive = false;
+
+function scrollMobile() {
+    const screenCenter = window.innerHeight / 2;
+
+    const elements = document.querySelectorAll('.feature, .card, .btn');
+
+    elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.top + rect.height / 2;
+
+        const distance = Math.abs(screenCenter - elCenter);
+
+        // área maior = funciona melhor no mobile
+        if (distance < 60) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    });
+}
+
+function handleMobileEffects() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile && !scrollListenerActive) {
+        window.addEventListener('scroll', scrollMobile);
+        scrollListenerActive = true;
+
+        // 🔥 roda uma vez ao carregar
+        scrollMobile();
+
+    } else if (!isMobile && scrollListenerActive) {
+        window.removeEventListener('scroll', scrollMobile);
+        scrollListenerActive = false;
+
+        document.querySelectorAll('.feature, .card, .btn')
+            .forEach(el => el.classList.remove('active'));
+    }
+}
+
+// INIT
+handleMobileEffects();
+window.addEventListener('resize', handleMobileEffects);
