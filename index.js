@@ -69,8 +69,8 @@ async function carregarKitnet() {
     document.getElementById("titulo").innerText = kitnet.nome;
     if (document.getElementById("descricao"))
         document.getElementById("descricao").innerText = kitnet.descricao;
-    if (document.getElementById("reserva"))
-        document.getElementById("reserva").href = (kitnet.reserva != "") ? kitnet.reserva : document.getElementById("reserva").href;
+    if (document.getElementById("reserva_kit"))
+        document.getElementById("reserva_kit").href = kitnet.reserva;
     // if (document.getElementById("btn_hero"))
     //     document.getElementById("btn_hero").href = kitnet.reserva;
     if (document.getElementById("btn-airbnb"))
