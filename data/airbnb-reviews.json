@@ -1,6 +1,6 @@
 {
-    "rating": 4.83,
-    "total": 96,
+    "rating": 4.81,
+    "total": 109,
     "reviews": [
         {
             "author": "Tiago",
@@ -28,11 +28,6 @@
             "text": "Suite muito boa, tem tudo que precisamos, bem limpo e confortável. Os anfitriões são atenciosos e rápidos nas mensagens, deixaram mimos e eu me senti bem acolhida. Estava muito calor e fiquei preocupada pois ventilador é pequeno, mas deu conta durante a noite. Recomendo."
         },
         {
-            "author": "Tiago",
-            "stars": "★★★★★",
-            "text": "Muito bom o lugar, até melhor do que nas fotos, privacidade total."
-        },
-        {
             "author": "Rodolfo",
             "stars": "★★★★★",
             "text": "Maravilhosa !"
@@ -51,6 +46,21 @@
             "author": "Emerson Fernando Guimaro",
             "stars": "★★★★★",
             "text": "Super recomendo, local extremamente limpo,uma paz anfitriões do local super educada lugar maravilhoso, iremos voltar com certeza super recomendo lugar pra quem realmente queira descansar nota 1000 parabéns a todos"
-        }     
+        },
+        {
+            "author": "Milena",
+            "stars": "★★★★★",
+            "text": "Muito bom , local limpo organizado, com certeza irei mais vezes"
+        },
+        {
+            "author": "Gustavo",
+            "stars": "★★★★★",
+            "text": "excelente localização e ótima estadia concerteza irei mais vezes."
+        },
+        {
+            "author": "Thiago",
+            "stars": "★★★★★",
+            "text": "Muito satisfatório, kitnet muito limpa, e o costa do norte está de nota 10, a praia alguns minutos a pé, em uma localização perfeita pra quem quer relaxar, com certeza retornaremos mas vezes"
+        }               
     ]
 }
