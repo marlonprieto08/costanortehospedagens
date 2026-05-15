@@ -1,9 +1,9 @@
 {
-    "0": {
+    "/index.html": {
         "nome": "Costa Norte Hospedagens",
         "descricao": "",
         "diretorio": "galeria",
-        "reserva": "https://airbnb.com/h/costanortehospedagenskitnet1",
+        "reserva": "",
         "itens": [
             "Cozinha completa",
             "Wi-Fi",
@@ -11,7 +11,7 @@
             "Estacionamento"
         ]
     },
-    "1": {
+    "/kitnet-casal-caraguatatuba.html": {
         "nome": "Kitnet 1",
         "descricao": "A apenas 5 minutos da Praia Martim de Sá...",
         "diretorio": "kitnet1",
@@ -25,7 +25,7 @@
             "Wi-Fi"
         ]
     },
-    "2": {
+    "/kitnet-proxima-praia-martim-de-sa.html": {
         "nome": "Kitnet 2",
         "descricao": "Kitnet confortável próxima à praia...",
         "diretorio": "kitnet2",
@@ -39,7 +39,7 @@
             "Wi-Fi"
         ]
     },
-    "7": {
+    "/kitnet-familia-caraguatatuba.html": {
         "nome": "Kitnet 7",
         "descricao": "Kitnet confortável para família pequena...",
         "diretorio": "kitnet7",
@@ -53,7 +53,7 @@
             "Wi-Fi"
         ]
     },
-    "8": {
+    "/kitnet-caraguatatuba-martim-de-sa.html": {
         "nome": "Kitnet 8",
         "descricao": "Kitnet confortável até 03 hospedes...",
         "diretorio": "kitnet8",
@@ -67,7 +67,7 @@
             "Wi-Fi"
         ]
     },
-    "9": {
+    "/airbnb-caraguatatuba-praia.html": {
         "nome": "Kitnet 9",
         "descricao": "Kitnet confortável até 03 hospedes...",
         "diretorio": "kitnet9",
