@@ -45,6 +45,68 @@
     {
         "@context": "https://schema.org",
         "@type": "VacationRental",
+        "@id": "https://www.costanortehospedagens.com.br/#business",
+        "identifier": "https://www.costanortehospedagens.com.br/",
+        "name": "Costa Norte Hospedagens",
+        "description": "Kitnets para temporada em Caraguatatuba, a 5 minutos da Praia Martim de Sá. Conforto e praticidade no Litoral Norte.",
+        "url": "https://www.costanortehospedagens.com.br",
+        "telephone": "+5512997701634",
+        "datePublished": "2023-10-25",
+        "additionalType": "https://schema.org/SelfHosting",
+        "priceRange": "$$",
+        
+        /* Resolvendo o aviso de 8 imagens (use URLs reais das suas fotos) */
+        "image": [
+            "https://www.costanortehospedagens.com.br/img/martim-de-sa3.jpeg",
+            "https://www.costanortehospedagens.com.br/img/kitnet1/1.webp",
+            "https://www.costanortehospedagens.com.br/img/kitnet1/2.webp",
+            "https://www.costanortehospedagens.com.br/img/kitnet2/1.webp",
+            "https://www.costanortehospedagens.com.br/img/kitnet2/2.webp",
+            "https://www.costanortehospedagens.com.br/img/kitnet3/1.webp",
+            "https://www.costanortehospedagens.com.br/img/kitnet3/2.webp",
+            "https://www.costanortehospedagens.com.br/img/fachada.jpg"
+        ],
+
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Alexandre de Souza Freire, 205, Martim de Sá",
+            "addressLocality": "Caraguatatuba",
+            "addressRegion": "SP",
+            "postalCode": "11662-480",
+            "addressCountry": "BR"
+        },
+
+        /* Resolvendo o erro crítico containsPlace */
+        "containsPlace": [
+            {
+            "@type": "Accommodation",
+            "name": "Kitnet Casal Costa Norte",
+            "description": "Unidade privativa para casais"
+            },
+            {
+            "@type": "Accommodation",
+            "name": "Kitnet Família Costa Norte",
+            "description": "Unidade ampla para famílias"
+            }
+        ],
+
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.6245, 
+            "longitude": -45.3852
+        },
+
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "109"
+        }
+    }
+    </script>     
+    <!-- <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VacationRental",
         "name": "Costa Norte Hospedagens",
         "description": "Kitnets para temporada em Caraguatatuba, a 5 minutos da Praia Martim de Sá. Conforto e praticidade no Litoral Norte.",
         "telephone": "+5512997701634",
@@ -106,7 +168,7 @@
         "checkinTime": "14:00",
         "checkoutTime": "12:00"
     }        
-    </script>
+    </script> -->
 </head>
 
 <body>
