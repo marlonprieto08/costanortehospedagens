@@ -54,16 +54,17 @@ carregarReviewsAirbnb();
 
 async function carregarKitnet() {
 
-    const params = new URLSearchParams(window.location.search);
-    let id = params.get("id");
-
-    if (id === null) {
-        id = 0;
+    // const params = new URLSearchParams(window.location.search);
+    const params = new URL(window.location);
+    let id = params.pathname;
+    console.log(id);
+    if (id === "/") {
+        id = "/index.html";
     }
 
     const response = await fetch("./data/kitnets.json");
     const data = await response.json();
-
+    console.log(data);
     const kitnet = data[id];
 
     document.getElementById("titulo").innerText = kitnet.nome;
@@ -104,6 +105,8 @@ async function carregarKitnet() {
 
         img.src = `img/${pasta}/${i}.webp`;
         img.loading = "lazy";
+        console.log(i%2);
+        img.alt = `Aluguel de Kitnet em Caraguatatuba - ${kitnet.nome} Costa Norte`;
 
         img.onerror = () => {
             img.classList.add("remove");
@@ -120,6 +123,8 @@ async function carregarKitnet() {
 
         img.src = `img/exterior/${i}.webp`;
         img.loading = "lazy";
+        console.log(i%2);
+        img.alt = `Aluguel de Kitnet na praia Martim de Sá - ${kitnet.nome} Costa Norte`;
 
         console.log(img);
         img.onerror = () => {
@@ -131,7 +136,6 @@ async function carregarKitnet() {
     }
 
     // LIGHTBOX GALERIA COM SETAS, SWIPE E CONTADOR
-
     galleryImages = [...document.querySelectorAll('.gallery img')]
         .filter(img => !img.classList.contains('remove'));
     console.log(galleryImages);
@@ -417,7 +421,7 @@ async function carregarInstagram() {
         div.className = "instagram-item";
 
         div.innerHTML = `
-        <img src="${post.img}" loading="lazy">
+        <img src="${post.img}" loading="lazy" alt="Post '${post.caption}' no instagram da Costa Norte Hospedagens de Caraguatatuba">
         <div class="instagram-overlay">${post.caption}</div>
     `;
 
