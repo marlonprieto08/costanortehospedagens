@@ -52,10 +52,8 @@
         "url": "https://www.costanortehospedagens.com.br",
         "telephone": "+5512997701634",
         "datePublished": "2025-10-25",
-        "additionalType": "https://schema.org/Apartment",
         "priceRange": "$$",
         
-        /* Resolvendo o aviso de 8 imagens (use URLs reais das suas fotos) */
         "image": [
             "https://www.costanortehospedagens.com.br/img/martim-de-sa3.jpeg",
             "https://www.costanortehospedagens.com.br/img/kitnet1/1.webp",
@@ -76,7 +74,6 @@
             "addressCountry": "BR"
         },
 
-        /* Resolvendo o erro crítico containsPlace */
         "containsPlace": [
             {
                 "@type": "Accommodation",
@@ -84,7 +81,10 @@
                 "description": "Unidade privativa para casais com cama de casal e cozinha.",
                 "occupancy": {
                     "@type": "QuantitativeValue",
-                    "maxValue": 2
+                    "value": 2,
+                    "minValue": 1,
+                    "maxValue": 2,
+                    "unitText": "pessoas"
                 },
                 "numberOfBedrooms": 1,
                 "numberOfBathroomsTotal": 1,
@@ -104,15 +104,17 @@
                 "description": "Unidade privativa para casais com cama de casal e cozinha.",
                 "occupancy": {
                     "@type": "QuantitativeValue",
-                    "maxValue": 3
+                    "value": 3,
+                    "minValue": 1,
+                    "maxValue": 3,
+                    "unitText": "pessoas"
                 },
                 "numberOfBedrooms": 1,
                 "numberOfBathroomsTotal": 1,
-                "bed": {
-                    "@type": "BedDetails",
-                    "numberOfBeds": 2,
-                    "type": "Cama de Casal, cama auxiliar"
-                },
+                "bed": [
+                        { "@type": "BedDetails", "numberOfBeds": 1, "type": "Cama de Casal" },
+                        { "@type": "BedDetails", "numberOfBeds": 1, "type": "Cama auxiliar" }
+                    ],
                 "amenityFeature": [
                     { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
                     { "@type": "LocationFeatureSpecification", "name": "Cozinha equipada", "value": true }
