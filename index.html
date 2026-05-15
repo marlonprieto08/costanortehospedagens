@@ -51,8 +51,8 @@
         "description": "Kitnets para temporada em Caraguatatuba, a 5 minutos da Praia Martim de Sá. Conforto e praticidade no Litoral Norte.",
         "url": "https://www.costanortehospedagens.com.br",
         "telephone": "+5512997701634",
-        "datePublished": "2023-10-25",
-        "additionalType": "https://schema.org/SelfHosting",
+        "datePublished": "2025-10-25",
+        "additionalType": "https://schema.org/Apartment",
         "priceRange": "$$",
         
         /* Resolvendo o aviso de 8 imagens (use URLs reais das suas fotos) */
@@ -79,14 +79,44 @@
         /* Resolvendo o erro crítico containsPlace */
         "containsPlace": [
             {
-            "@type": "Accommodation",
-            "name": "Kitnet Casal Costa Norte",
-            "description": "Unidade privativa para casais"
+                "@type": "Accommodation",
+                "name": "Kitnet Casal Costa Norte",
+                "description": "Unidade privativa para casais com cama de casal e cozinha.",
+                "occupancy": {
+                    "@type": "QuantitativeValue",
+                    "maxValue": 2
+                },
+                "numberOfBedrooms": 1,
+                "numberOfBathroomsTotal": 1,
+                "bed": {
+                    "@type": "BedDetails",
+                    "numberOfBeds": 1,
+                    "type": "Cama de Casal"
+                },
+                "amenityFeature": [
+                    { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
+                    { "@type": "LocationFeatureSpecification", "name": "Cozinha equipada", "value": true }
+                ]
             },
             {
-            "@type": "Accommodation",
-            "name": "Kitnet Família Costa Norte",
-            "description": "Unidade ampla para famílias"
+                "@type": "Accommodation",
+                "name": "Kitnet Família Costa Norte",                
+                "description": "Unidade privativa para casais com cama de casal e cozinha.",
+                "occupancy": {
+                    "@type": "QuantitativeValue",
+                    "maxValue": 3
+                },
+                "numberOfBedrooms": 1,
+                "numberOfBathroomsTotal": 1,
+                "bed": {
+                    "@type": "BedDetails",
+                    "numberOfBeds": 2,
+                    "type": "Cama de Casal, cama auxiliar"
+                },
+                "amenityFeature": [
+                    { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
+                    { "@type": "LocationFeatureSpecification", "name": "Cozinha equipada", "value": true }
+                ]
             }
         ],
 
@@ -113,6 +143,7 @@
             }
         ],
         "review": {
+            "datePublished": "2026-05-01",
             "@type": "Review",
             "reviewRating": {
             "@type": "Rating",
