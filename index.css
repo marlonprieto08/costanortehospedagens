@@ -1141,6 +1141,83 @@ footer {
             } */
 }
 
+.promo-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .75);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s;
+}
+
+.promo-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.promo-content {
+    position: relative;
+
+    max-width: 800px;
+    width: 92%;
+
+    transform: scale(.9);
+    opacity: 0;
+
+    transition: .4s ease;
+}
+
+.promo-modal.active .promo-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.promo-content img {
+    width: 100%;
+    display: block;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .4);
+}
+
+.promo-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 28px;
+
+    background: white;
+    color: #333;
+}
+
+@media (max-width:768px) {
+
+    .promo-content {
+        width: 95%;
+    }
+
+}
+
 /* .seo-content {
     padding: 60px 20px;
 }

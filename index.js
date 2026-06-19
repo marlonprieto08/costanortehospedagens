@@ -105,7 +105,7 @@ async function carregarKitnet() {
 
         img.src = `img/${pasta}/${i}.webp`;
         img.loading = "lazy";
-        console.log(i%2);
+        console.log(i % 2);
         img.alt = `Aluguel de Kitnet em Caraguatatuba - ${kitnet.nome} Costa Norte`;
 
         img.onerror = () => {
@@ -123,7 +123,7 @@ async function carregarKitnet() {
 
         img.src = `img/exterior/${i}.webp`;
         img.loading = "lazy";
-        console.log(i%2);
+        console.log(i % 2);
         img.alt = `Aluguel de Kitnet na praia Martim de Sá - ${kitnet.nome} Costa Norte`;
 
         console.log(img);
@@ -503,6 +503,100 @@ function handleMobileEffects() {
     }
 }
 
+async function carregarPopupPromocional() {
+
+    try {
+
+        const response = await fetch("./data/popup.json");
+
+        if (!response.ok) {
+            throw new Error("Erro ao carregar popup.json");
+        }
+
+        const popup = await response.json();
+
+        // Popup desativado
+        if (!popup.ativo) return;
+
+        // Verifica vigência
+        const hoje = new Date();
+
+        const inicio = new Date(popup.inicio + "T00:00:00");
+        const fim = new Date(popup.fim + "T23:59:59");
+
+        if (hoje < inicio || hoje > fim) {
+            return;
+        }
+
+        // Controle por sessão
+        const popupKey = `popup_${popup.id}`;
+
+        if (sessionStorage.getItem(popupKey)) {
+            return;
+        }
+
+        // Elementos
+        const modal = document.getElementById("promo-modal");
+        const imagem = document.getElementById("promo-img");
+        const link = document.getElementById("promo-link");
+        const botaoFechar = document.querySelector(".promo-close");
+
+        if (!modal || !imagem || !link || !botaoFechar) {
+            console.warn("Elementos do popup não encontrados.");
+            return;
+        }
+
+        // Preenche conteúdo
+        imagem.src = popup.imagem;
+        imagem.alt = popup.titulo || "Promoção";
+
+        link.href = popup.link || "#";
+
+        // Exibe popup
+        modal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+        // Função fechar
+        function fecharPopup() {
+
+            modal.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+            sessionStorage.setItem(popupKey, "true");
+        }
+
+        // Botão fechar
+        botaoFechar.addEventListener("click", fecharPopup);
+
+        // Clique fora
+        modal.addEventListener("click", (e) => {
+
+            if (e.target === modal) {
+                fecharPopup();
+            }
+
+        });
+
+        // ESC
+        document.addEventListener("keydown", (e) => {
+
+            if (e.key === "Escape") {
+                fecharPopup();
+            }
+
+        });
+
+    } catch (error) {
+
+        console.error("Erro ao carregar popup promocional:", error);
+
+    }
+
+}
+
 // INIT
 handleMobileEffects();
+window.addEventListener("load", carregarPopupPromocional);
 window.addEventListener('resize', handleMobileEffects);
