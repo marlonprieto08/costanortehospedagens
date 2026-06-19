@@ -1,6 +1,6 @@
 {
     "rating": 4.81,
-    "total": 109,
+    "total": 135,
     "reviews": [
         {
             "author": "Tiago",
@@ -61,6 +61,31 @@
             "author": "Thiago",
             "stars": "★★★★★",
             "text": "Muito satisfatório, kitnet muito limpa, e o costa do norte está de nota 10, a praia alguns minutos a pé, em uma localização perfeita pra quem quer relaxar, com certeza retornaremos mas vezes"
-        }               
+        },               
+        {
+            "author": "Luis",
+            "stars": "★★★★★",
+            "text": "um lugar muito bom e gostoso de passar perto da praia, tudo certinho e limpo, gostei demais e irei voltar com certeza."
+        },
+        {
+            "author": "Vitor",
+            "stars": "★★★★",
+            "text": "barato, limpo, bom lugar"
+        },
+        {
+            "author": "Rosineide",
+            "stars": "★★★★★",
+            "text": "recomendo tudo satisfatório...muito boa  e recomendo"
+        },
+        {
+            "author": "Guilherme",
+            "stars": "★★★★★",
+            "text": "Otima quitinete, supre as necessidades básicas. Muito bem limpa e organizada. Recomendo."
+        },
+        {
+            "author": "Tiago",
+            "stars": "★★★★★",
+            "text": "Lugar muito bem localizado, kitnet bem aconchegante!"
+        }     
     ]
 }
