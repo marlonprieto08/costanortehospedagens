@@ -539,6 +539,7 @@ async function carregarPopupPromocional() {
         const modal = document.getElementById("promo-modal");
         const imagem = document.getElementById("promo-img");
         const link = document.getElementById("promo-link");
+
         const botaoFechar = document.querySelector(".promo-close");
 
         if (!modal || !imagem || !link || !botaoFechar) {
@@ -550,7 +551,19 @@ async function carregarPopupPromocional() {
         imagem.src = popup.imagem;
         imagem.alt = popup.titulo || "Promoção";
 
-        link.href = popup.link || "#";
+        if (popup.link && popup.link.trim() !== "") {
+
+            link.href = popup.link;
+            link.style.pointerEvents = "auto";
+            link.style.cursor = "pointer";
+
+        } else {
+
+            link.removeAttribute("href");
+            link.style.pointerEvents = "none";
+            link.style.cursor = "default";
+
+        }
 
         // Exibe popup
         modal.classList.add("active");
