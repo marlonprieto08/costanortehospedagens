@@ -57,14 +57,14 @@ async function carregarKitnet() {
     // const params = new URLSearchParams(window.location.search);
     const params = new URL(window.location);
     let id = params.pathname;
-    console.log(id);
+    // console.log(id);
     if (id === "/") {
         id = "/index.html";
     }
 
     const response = await fetch("./data/kitnets.json");
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     const kitnet = data[id];
 
     document.getElementById("titulo").innerText = kitnet.nome;
@@ -72,8 +72,10 @@ async function carregarKitnet() {
         document.getElementById("descricao").innerText = kitnet.descricao;
     if (document.getElementById("reserva_kit"))
         document.getElementById("reserva_kit").href = kitnet.reserva;
-    // if (document.getElementById("btn_hero"))
-    //     document.getElementById("btn_hero").href = kitnet.reserva;
+    if (document.getElementById("btn_hero"))
+        document.getElementById("btn_hero").href = kitnet.reserva;
+    if (document.getElementById("btn_sobre"))
+        document.getElementById("btn_sobre").href = kitnet.reserva;
     if (document.getElementById("btn-airbnb"))
         document.getElementById("btn-airbnb").href = kitnet.reserva;
     if (document.getElementById("reviews"))
