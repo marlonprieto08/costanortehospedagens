@@ -1,16 +1,21 @@
 [
   {
-    "img": "/img/instagram/selo-superhost.jpg",
-    "link": "https://www.instagram.com/p/DW4GFKDDcy0/",
-    "caption": "Conquistamos o selo Superhost no Airbnb"
-  },
-  {
-    "img": "/img/instagram/post-fixo.jpg",
+    "img": "/img/instagram/post-fixo.webp",
     "link": "https://www.instagram.com/p/DRU6LLbkdsd/",
     "caption": "Estamos a 5 min da Martim de Sá"
   },
   {
-    "img": "/img/instagram/2-meses.jpg",
+    "img": "/img/instagram/millenial-genz.webp",
+    "link": "https://www.instagram.com/p/DRU6LLbkdsd/",
+    "caption": "Cada geração tem seu jeito de chamar conforto ✨"
+  },
+  {
+    "img": "/img/instagram/selo-superhost.webp",
+    "link": "https://www.instagram.com/p/DW4GFKDDcy0/",
+    "caption": "Conquistamos o selo Superhost no Airbnb"
+  },
+  {
+    "img": "/img/instagram/2-meses.webp",
     "link": "https://www.instagram.com/p/DTeH_dSDXJn/?img_index=1",
     "caption": "Dois meses de Costa Norte! 🎉 Obrigado a todos que fizeram parte dessa jornada até aqui. Estamos ansiosos para os próximos capítulos! #CostaNorte #Gratidão"
   },
@@ -20,7 +25,7 @@
     "caption": "Última kitnet do Recanto Martim de Sá"
   },
   {
-    "img": "/img/instagram/S2.jpg",
+    "img": "/img/instagram/S2.webp",
     "link": "https://www.instagram.com/p/DTTlNILEVgs/",
     "caption": "💛 Era pra fazer coração... Virou brinde 🍻🌊"
   },
@@ -30,7 +35,7 @@
     "caption": "A nossa Kitnet Amarela já está disponível para locação!"
   },
   {
-    "img": "/img/instagram/experiencia.jpg",
+    "img": "/img/instagram/experiencia.webp",
     "link": "https://www.instagram.com/p/DTGun5zkfZM/",
     "caption": "Na Costa Norte Hospedagens, acreditamos que personalizar experiências começa antes da chegada do hóspede."
   }
