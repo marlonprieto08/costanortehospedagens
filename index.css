@@ -192,14 +192,14 @@ nav a.menu-close {
     z-index: 1;
 }
 
-/* .hero-overlay {
+.hero-overlay {
     position: absolute;
     inset: 0;
 
     background: rgba(0, 0, 0, 0.45);
 
     z-index: 2;
-} */
+}
 
 .hero-content {
     position: relative;
@@ -290,7 +290,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    margin-top: 30px;
+    margin-bottom: 1rem;
 }
 
 .feature {
@@ -484,7 +484,8 @@ h2 {
 #instagram div,
 #contato div,
 .seo-content div,
-#avaliacoes>div:last-child {
+#avaliacoes>div:last-child,
+#sobre div:not(.features) {
     display: flex;
 }
 
