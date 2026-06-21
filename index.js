@@ -23,34 +23,35 @@
 // carregarReviews();
 
 // REVIEWS AIRBNB
-async function carregarReviewsAirbnb() {
+if (document.getElementById("airbnb-rating")) {
+    async function carregarReviewsAirbnb() {
 
-    const response = await fetch("data/airbnb-reviews.json");
-    const data = await response.json();
+        const response = await fetch("data/airbnb-reviews.json");
+        const data = await response.json();
 
-    const ratingDiv = document.getElementById("airbnb-rating");
-    const list = document.getElementById("airbnb-reviews-list");
+        const ratingDiv = document.getElementById("airbnb-rating");
+        const list = document.getElementById("airbnb-reviews-list");
 
-    ratingDiv.innerHTML = `
-⭐ ${data.rating} (${data.total} avaliações)
-`;
-
-    [...data.reviews].reverse().slice(0, 6).forEach(r => {
-        const card = document.createElement("div");
-        card.className = "review-card";
-
-        card.innerHTML = `
-            <div class="review-author">${r.author}</div>
-            <div class="review-stars">${r.stars}</div>
-            <div class="review-text">${r.text}</div>
+        ratingDiv.innerHTML = `
+            ⭐ ${data.rating} (${data.total} avaliações)
             `;
 
-        list.appendChild(card);
-    });
+        [...data.reviews].reverse().slice(0, 6).forEach(r => {
+            const card = document.createElement("div");
+            card.className = "review-card";
 
+            card.innerHTML = `
+                <div class="review-author">${r.author}</div>
+                <div class="review-stars">${r.stars}</div>
+                <div class="review-text">${r.text}</div>
+                `;
+
+            list.appendChild(card);
+        });
+    }
+
+    carregarReviewsAirbnb();
 }
-
-carregarReviewsAirbnb();
 
 async function carregarKitnet() {
 
@@ -410,56 +411,60 @@ const observer = new MutationObserver(() => {
 
 observer.observe(navTop, { attributes: true });
 
-async function carregarInstagram() {
+if (document.getElementById("instagram")) {
+    async function carregarInstagram() {
 
-    const response = await fetch("/data/instagram.json");
-    const posts = await response.json();
+        const response = await fetch("/data/instagram.json");
+        const posts = await response.json();
 
-    const container = document.getElementById("instagram-feed");
+        const container = document.getElementById("instagram-feed");
 
-    posts.slice(0, 8).forEach(post => {
+        posts.slice(0, 8).forEach(post => {
 
-        const div = document.createElement("div");
-        div.className = "instagram-item";
+            const div = document.createElement("div");
+            div.className = "instagram-item";
 
-        div.innerHTML = `
+            div.innerHTML = `
         <img src="${post.img}" loading="lazy" alt="Post '${post.caption}' no instagram da Costa Norte Hospedagens de Caraguatatuba">
         <div class="instagram-overlay">${post.caption}</div>
     `;
 
-        div.addEventListener("click", () => {
-            window.open(post.link, "_blank");
+            div.addEventListener("click", () => {
+                window.open(post.link, "_blank");
+            });
+
+            container.appendChild(div);
+
         });
 
-        container.appendChild(div);
+    }
 
-    });
-
+    carregarInstagram();
 }
 
-carregarInstagram();
+if (document.getElementById("modal-reservas")) {
+    const btnReserva = document.getElementById("reserva");
+    const modal = document.getElementById("modal-reservas");
+    const fechar = document.querySelector(".modal-close");
 
-const btnReserva = document.getElementById("reserva");
-const modal = document.getElementById("modal-reservas");
-const fechar = document.querySelector(".modal-close");
+    // abrir modal
+    btnReserva.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.classList.add("active");
+    });
 
-// abrir modal
-btnReserva.addEventListener("click", (e) => {
-    e.preventDefault();
-    modal.classList.add("active");
-});
-
-// fechar no X
-fechar.addEventListener("click", () => {
-    modal.classList.remove("active");
-});
-
-// fechar clicando fora
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    // fechar no X
+    fechar.addEventListener("click", () => {
         modal.classList.remove("active");
-    }
-});
+    });
+
+    // fechar clicando fora
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("active");
+        }
+    });
+}
 
 let scrollListenerActive = false;
 
@@ -505,113 +510,115 @@ function handleMobileEffects() {
     }
 }
 
-async function carregarPopupPromocional() {
+if (document.getElementById("promo-modal")) {
+    async function carregarPopupPromocional() {
+        try {
 
-    try {
+            const response = await fetch("./data/popup.json");
 
-        const response = await fetch("./data/popup.json");
-
-        if (!response.ok) {
-            throw new Error("Erro ao carregar popup.json");
-        }
-
-        const popup = await response.json();
-
-        // Popup desativado
-        if (!popup.ativo) return;
-
-        // Verifica vigência
-        const hoje = new Date();
-
-        const inicio = new Date(popup.inicio + "T00:00:00");
-        const fim = new Date(popup.fim + "T23:59:59");
-
-        if (hoje < inicio || hoje > fim) {
-            return;
-        }
-
-        // Controle por sessão
-        const popupKey = `popup_${popup.id}`;
-
-        if (sessionStorage.getItem(popupKey)) {
-            return;
-        }
-
-        // Elementos
-        const modal = document.getElementById("promo-modal");
-        const imagem = document.getElementById("promo-img");
-        const link = document.getElementById("promo-link");
-
-        const botaoFechar = document.querySelector(".promo-close");
-
-        if (!modal || !imagem || !link || !botaoFechar) {
-            console.warn("Elementos do popup não encontrados.");
-            return;
-        }
-
-        // Preenche conteúdo
-        imagem.src = popup.imagem;
-        imagem.alt = popup.titulo || "Promoção";
-
-        if (popup.link && popup.link.trim() !== "") {
-
-            link.href = popup.link;
-            link.style.pointerEvents = "auto";
-            link.style.cursor = "pointer";
-
-        } else {
-
-            link.removeAttribute("href");
-            link.style.pointerEvents = "none";
-            link.style.cursor = "default";
-
-        }
-
-        // Exibe popup
-        modal.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
-        // Função fechar
-        function fecharPopup() {
-
-            modal.classList.remove("active");
-
-            document.body.style.overflow = "";
-
-            sessionStorage.setItem(popupKey, "true");
-        }
-
-        // Botão fechar
-        botaoFechar.addEventListener("click", fecharPopup);
-
-        // Clique fora
-        modal.addEventListener("click", (e) => {
-
-            if (e.target === modal) {
-                fecharPopup();
+            if (!response.ok) {
+                throw new Error("Erro ao carregar popup.json");
             }
 
-        });
+            const popup = await response.json();
 
-        // ESC
-        document.addEventListener("keydown", (e) => {
+            // Popup desativado
+            if (!popup.ativo) return;
 
-            if (e.key === "Escape") {
-                fecharPopup();
+            // Verifica vigência
+            const hoje = new Date();
+
+            const inicio = new Date(popup.inicio + "T00:00:00");
+            const fim = new Date(popup.fim + "T23:59:59");
+
+            if (hoje < inicio || hoje > fim) {
+                return;
             }
 
-        });
+            // Controle por sessão
+            const popupKey = `popup_${popup.id}`;
 
-    } catch (error) {
+            if (sessionStorage.getItem(popupKey)) {
+                return;
+            }
 
-        console.error("Erro ao carregar popup promocional:", error);
+            // Elementos
+            const modal = document.getElementById("promo-modal");
+            const imagem = document.getElementById("promo-img");
+            const link = document.getElementById("promo-link");
+
+            const botaoFechar = document.querySelector(".promo-close");
+
+            if (!modal || !imagem || !link || !botaoFechar) {
+                console.warn("Elementos do popup não encontrados.");
+                return;
+            }
+
+            // Preenche conteúdo
+            imagem.src = popup.imagem;
+            imagem.alt = popup.titulo || "Promoção";
+
+            if (popup.link && popup.link.trim() !== "") {
+
+                link.href = popup.link;
+                link.style.pointerEvents = "auto";
+                link.style.cursor = "pointer";
+
+            } else {
+
+                link.removeAttribute("href");
+                link.style.pointerEvents = "none";
+                link.style.cursor = "default";
+
+            }
+
+            // Exibe popup
+            modal.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+            // Função fechar
+            function fecharPopup() {
+
+                modal.classList.remove("active");
+
+                document.body.style.overflow = "";
+
+                sessionStorage.setItem(popupKey, "true");
+            }
+
+            // Botão fechar
+            botaoFechar.addEventListener("click", fecharPopup);
+
+            // Clique fora
+            modal.addEventListener("click", (e) => {
+
+                if (e.target === modal) {
+                    fecharPopup();
+                }
+
+            });
+
+            // ESC
+            document.addEventListener("keydown", (e) => {
+
+                if (e.key === "Escape") {
+                    fecharPopup();
+                }
+
+            });
+
+        } catch (error) {
+
+            console.error("Erro ao carregar popup promocional:", error);
+
+        }
 
     }
 
+    window.addEventListener("load", carregarPopupPromocional);
 }
 
 // INIT
 handleMobileEffects();
-window.addEventListener("load", carregarPopupPromocional);
 window.addEventListener('resize', handleMobileEffects);
