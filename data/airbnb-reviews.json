@@ -3,36 +3,6 @@
     "total": 164,
     "reviews": [
         {
-            "author": "Christofer",
-            "stars": "★★★★★",
-            "text": "Tudo perfeito...."
-        },
-        {
-            "author": "Isabelle",
-            "stars": "★★★★★",
-            "text": "A estadia nos atendeu perfeitamente, fica extremamente perto da praia e restaurantes arredores, fácil acesso e boa localização, ficamos super aconchegados e tinha tudo o que precisávamos, lugar limpo e muito bem aconchegante, com certeza irei voltar mais vezes!"
-        },
-        {
-            "author": "Anna",
-            "stars": "★★★★★",
-            "text": "Eu e meu amigo adoramos passar a noite no local! tudo muito organizado e bem preparado"
-        },
-        {
-            "author": "Cleisson",
-            "stars": "★★★★★",
-            "text": "Ótimo espaço recomendo com certeza!!"
-        },
-        {
-            "author": "Joaquim",
-            "stars": "★★★★★",
-            "text": "Excelente, ótimo  lugar pra ficar, com certeza voltarei!"
-        },
-        {
-            "author": "Vitoria",
-            "stars": "★★★★★",
-            "text": "Aconchegante demais, me sentir em casa, até melhor que em casa, lugar de paz. Eu amei e voltarei mais vezes"
-        },
-        {
             "author": "Tiago",
             "stars": "★★★★★",
             "text": "Muito bom o lugar, até melhor do que nas fotos, privacidade total."
@@ -101,6 +71,36 @@
             "author": "Yranna",
             "stars": "★★★★★",
             "text": "eu amei, super organizada e limpinha. com certeza voltarei"
-        }               
+        },     
+        {
+            "author": "Vitoria",
+            "stars": "★★★★★",
+            "text": "Aconchegante demais, me sentir em casa, até melhor que em casa, lugar de paz. Eu amei e voltarei mais vezes"
+        },
+        {
+            "author": "Joaquim",
+            "stars": "★★★★★",
+            "text": "Excelente, ótimo  lugar pra ficar, com certeza voltarei!"
+        },
+        {
+            "author": "Cleisson",
+            "stars": "★★★★★",
+            "text": "Ótimo espaço recomendo com certeza!!"
+        },
+        {
+            "author": "Anna",
+            "stars": "★★★★★",
+            "text": "Eu e meu amigo adoramos passar a noite no local! tudo muito organizado e bem preparado"
+        },
+        {
+            "author": "Isabelle",
+            "stars": "★★★★★",
+            "text": "A estadia nos atendeu perfeitamente, fica extremamente perto da praia e restaurantes arredores, fácil acesso e boa localização, ficamos super aconchegados e tinha tudo o que precisávamos, lugar limpo e muito bem aconchegante, com certeza irei voltar mais vezes!"
+        },
+        {
+            "author": "Christofer",
+            "stars": "★★★★★",
+            "text": "Tudo perfeito...."
+        }
     ]
 }
