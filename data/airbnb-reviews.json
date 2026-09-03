@@ -1,7 +1,37 @@
 {
-    "rating": 4.81,
-    "total": 135,
+    "rating": 4.84,
+    "total": 164,
     "reviews": [
+        {
+            "author": "Christofer",
+            "stars": "★★★★★",
+            "text": "Tudo perfeito...."
+        },
+        {
+            "author": "Isabelle",
+            "stars": "★★★★★",
+            "text": "A estadia nos atendeu perfeitamente, fica extremamente perto da praia e restaurantes arredores, fácil acesso e boa localização, ficamos super aconchegados e tinha tudo o que precisávamos, lugar limpo e muito bem aconchegante, com certeza irei voltar mais vezes!"
+        },
+        {
+            "author": "Anna",
+            "stars": "★★★★★",
+            "text": "Eu e meu amigo adoramos passar a noite no local! tudo muito organizado e bem preparado"
+        },
+        {
+            "author": "Cleisson",
+            "stars": "★★★★★",
+            "text": "Ótimo espaço recomendo com certeza!!"
+        },
+        {
+            "author": "Joaquim",
+            "stars": "★★★★★",
+            "text": "Excelente, ótimo  lugar pra ficar, com certeza voltarei!"
+        },
+        {
+            "author": "Vitoria",
+            "stars": "★★★★★",
+            "text": "Aconchegante demais, me sentir em casa, até melhor que em casa, lugar de paz. Eu amei e voltarei mais vezes"
+        },
         {
             "author": "Tiago",
             "stars": "★★★★★",
@@ -61,31 +91,16 @@
             "author": "Thiago",
             "stars": "★★★★★",
             "text": "Muito satisfatório, kitnet muito limpa, e o costa do norte está de nota 10, a praia alguns minutos a pé, em uma localização perfeita pra quem quer relaxar, com certeza retornaremos mas vezes"
-        },               
-        {
-            "author": "Luis",
-            "stars": "★★★★★",
-            "text": "um lugar muito bom e gostoso de passar perto da praia, tudo certinho e limpo, gostei demais e irei voltar com certeza."
         },
         {
-            "author": "Vitor",
-            "stars": "★★★★",
-            "text": "barato, limpo, bom lugar"
+            "author": "Andreza",
+            "stars": "★★★★★",
+            "text": "Foi muito bom! Impecável ✨É muito perto da praia!"
         },
         {
-            "author": "Rosineide",
+            "author": "Yranna",
             "stars": "★★★★★",
-            "text": "recomendo tudo satisfatório...muito boa  e recomendo"
-        },
-        {
-            "author": "Guilherme",
-            "stars": "★★★★★",
-            "text": "Otima quitinete, supre as necessidades básicas. Muito bem limpa e organizada. Recomendo."
-        },
-        {
-            "author": "Tiago",
-            "stars": "★★★★★",
-            "text": "Lugar muito bem localizado, kitnet bem aconchegante!"
-        }     
+            "text": "eu amei, super organizada e limpinha. com certeza voltarei"
+        }               
     ]
 }
